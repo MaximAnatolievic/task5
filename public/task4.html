@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="EN">
+ <head>
+  <title>Задание 4</title>
+
+  <style>
+   .box { text-align: center; background-color: #eeeeee; }
+   .centered { display: inline-block; margin: 0; }
+   .chess-board { border-spacing: 0; border-collapse: collapse; }
+   .chess-board th { padding: .5em; }
+   .chess-board td { border: 1px solid; width: 5em; height: 5em; text-align: center; vertical-align: middle; }
+   .chess-board .white { background: #f0d9b5; }
+   .chess-board .black { background: #b58863; }
+  </style>
+ </head>
+ <body>
+ <div class="box">
+  <div class="centered">
+
+  <table class="chess-board">
+   <tbody>
+    <tr>
+     <th></th>
+     <th>a</th>
+     <th>b</th>
+     <th>c</th>
+     <th>d</th>
+     <th>e</th>
+     <th>f</th>
+     <th>g</th>
+     <th>h</th>
+    </tr>
+    <tr>
+     <th>8</th>
+     <td class="el white" id="A8" onclick="func(this)"></td>
+     <td class="el black" id="B8" onclick="func(this)"></td>
+     <td class="el white" id="C8" onclick="func(this)"></td>
+     <td class="el black" id="D8" onclick="func(this);"></td>
+     <td class="el white" id="E8" onclick="func(this);"></td>
+     <td class="el black" id="F8" onclick="func(this);"></td>
+     <td class="el white" id="G8" onclick="func(this);"></td>
+     <td class="el black" id="H8" onclick="func(this);"></td>
+    </tr>
+    <tr>
+     <th>7</th>
+     <td class="el black" id="A7" onclick="func(this);"></td>
+     <td class="el white" id="B7" onclick="func(this);"></td>
+     <td class="el black" id="C7" onclick="func(this);"></td>
+     <td class="el white" id="D7" onclick="func(this);"></td>
+     <td class="el black" id="E7" onclick="func(this);"></td>
+     <td class="el white" id="F7" onclick="func(this);"></td>
+     <td class="el black" id="G7" onclick="func(this);"></td>
+     <td class="el white" id="H7" onclick="func(this);"></td>
+    </tr>
+    <tr>
+     <th>6</th>
+     <td class="el white" id="A6" onclick="func(this);"></td>
+     <td class="el black" id="B6" onclick="func(this);"></td>
+     <td class="el white" id="C6" onclick="func(this);"></td>
+     <td class="el black" id="D6" onclick="func(this);"></td>
+     <td class="el white" id="E6" onclick="func(this);"></td>
+     <td class="el black" id="F6" onclick="func(this);"></td>
+     <td class="el white" id="G6" onclick="func(this);"></td>
+     <td class="el black" id="H6" onclick="func(this);"></td>
+    </tr>
+    <tr>
+     <th>5</th>
+     <td class="el black" id="A5" onclick="func(this);"></td>
+     <td class="el white" id="B5" onclick="func(this);"></td>
+     <td class="el black" id="C5" onclick="func(this);"></td>
+     <td class="el white" id="D5" onclick="func(this);"></td>
+     <td class="el black" id="E5" onclick="func(this);"></td>
+     <td class="el white" id="F5" onclick="func(this);"></td>
+     <td class="el black" id="G5" onclick="func(this);"></td>
+     <td class="el white" id="H5" onclick="func(this);"></td>
+    </tr>
+    <tr>
+     <th>4</th>
+     <td class="el white" id="A4" onclick="func(this);"></td>
+     <td class="el black" id="B4" onclick="func(this);"></td>
+     <td class="el white" id="C4" onclick="func(this);"></td>
+     <td class="el black" id="D4" onclick="func(this);"></td>
+     <td class="el white" id="E4" onclick="func(this);"></td>
+     <td class="el black" id="F4" onclick="func(this);"></td>
+     <td class="el white" id="G4" onclick="func(this);"></td>
+     <td class="el black" id="H4" onclick="func(this);"></td>
+    </tr>
+    <tr>
+     <th>3</th>
+     <td class="el black" id="A3" onclick="func(this);"></td>
+     <td class="el white" id="B3" onclick="func(this);"></td>
+     <td class="el black" id="C3" onclick="func(this);"></td>
+     <td class="el white" id="D3" onclick="func(this);"></td>
+     <td class="el black" id="E3" onclick="func(this);"></td>
+     <td class="el white" id="F3" onclick="func(this);"></td>
+     <td class="el black" id="G3" onclick="func(this);"></td>
+     <td class="el white" id="H3" onclick="func(this);"></td>
+    </tr>
+    <tr>
+     <th>2</th>
+     <td class="el white" id="A2" onclick="func(this);"></td>
+     <td class="el black" id="B2" onclick="func(this);"></td>
+     <td class="el white" id="C2" onclick="func(this);"></td>
+     <td class="el black" id="D2" onclick="func(this);"></td>
+     <td class="el white" id="E2" onclick="func(this);"></td>
+     <td class="el black" id="F2" onclick="func(this);"></td>
+     <td class="el white" id="G2" onclick="func(this);"></td>
+     <td class="el black" id="H2" onclick="func(this);"></td>
+    </tr>
+    <tr>
+     <th>1</th>
+     <td class="el black" id="A1" onclick="func(this);"></td>
+     <td class="el white" id="B1" onclick="func(this);"></td>
+     <td class="el black" id="C1" onclick="func(this);"></td>
+     <td class="el white" id="D1" onclick="func(this);"></td>
+     <td class="el black" id="E1" onclick="func(this);"></td>
+     <td class="el white" id="F1" onclick="func(this);"></td>
+     <td class="el black" id="G1" onclick="func(this);"></td>
+     <td class="el white" id="H1" onclick="func(this);"></td>
+    </tr>
+   </tbody>
+  </table>
+
+  </div>
+ </div>
+<script>
+
+
+function func(element)
+{
+	var objs = document.querySelectorAll('.el');
+	var white = document.getElementsByClassName("el white");
+	for(let i = 0; i<white.length;i++)
+	{
+		white[i].style.background = "#f0d9b5";
+	}
+	var black = document.getElementsByClassName("el black");
+	for(let i = 0; i<black.length;i++)
+	{
+		black[i].style.background = "#b58863";
+	}
+	element.style.background = "blue";
+	var str = element.id;
+	var arr = [];
+	for(var i =0; i<str.length; i++)
+	{
+	arr[i]=str.charAt(i);
+	}
+	var hor ="ABCDEFGH";
+	var vert = "12345678";
+	var possibAns = [];
+	possibAns[0] = hor.charAt(hor.indexOf(arr[0])+2);
+	possibAns[1] = vert.charAt(vert.indexOf(arr[1])+1);
+	possibAns[2] = hor.charAt(hor.indexOf(arr[0])+2);
+	possibAns[3] = vert.charAt(vert.indexOf(arr[1])-1);
+	possibAns[4] = hor.charAt(hor.indexOf(arr[0])-2);
+	possibAns[5] = vert.charAt(vert.indexOf(arr[1])+1);
+	possibAns[6] = hor.charAt(hor.indexOf(arr[0])-2);
+	possibAns[7] = vert.charAt(vert.indexOf(arr[1])-1);
+	possibAns[8] = hor.charAt(hor.indexOf(arr[0])+1);
+	possibAns[9] = vert.charAt(vert.indexOf(arr[1])+2);
+	possibAns[10] = hor.charAt(hor.indexOf(arr[0])+1);
+	possibAns[11] = vert.charAt(vert.indexOf(arr[1])-2);
+	possibAns[12] = hor.charAt(hor.indexOf(arr[0])-1);
+	possibAns[13] = vert.charAt(vert.indexOf(arr[1])+2);
+	possibAns[14] = hor.charAt(hor.indexOf(arr[0])-1);
+	possibAns[15] = vert.charAt(vert.indexOf(arr[1])-2);
+	var realAns = [];
+	var k =0;
+	var l = 0;
+	for(; l<16; l+=2)
+	{
+		if(possibAns[l]!="" && possibAns[l+1]!="")
+		{
+			realAns[k]= possibAns[l]+""+possibAns[l+1];
+			k++;
+		}
+	}
+	var answers = [];
+	for(let i=0;i<realAns.length; i++)
+	{
+		answers[i]=document.getElementById(realAns[i]);
+		answers[i].style.background = "green";
+	}
+}
+</script>
+<a href="http://localhost:3000/index.html"><b>Главная</b></href>
+ </body>
+
+</html>

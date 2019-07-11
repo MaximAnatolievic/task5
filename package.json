@@ -1,0 +1,28 @@
+{
+  "name": "task_5",
+  "version": "1.0.0",
+  "description": "Doing task 5",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "E:\\Projects\\Task_5"
+  },
+  "keywords": [
+    "Task_5"
+  ],
+  "author": "Ivanov M.A.",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.7.0",
+    "koa-logger": "^3.2.0",
+    "koa-parser": "^1.0.7",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "pg": "^7.11.0",
+    "pg-hstore": "^2.3.3",
+    "sequelize": "^5.9.4"
+  }
+}

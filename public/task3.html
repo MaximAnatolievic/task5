@@ -1,0 +1,417 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title>Задание 3</title>
+
+<style>
+#sqr{
+width: 420px;
+height: 420px;
+position: relative;
+border-style: solid;
+border-width: 1px;
+}
+#sqr01{
+width: 100px;
+height: 100px;
+background: white;
+display: inline-block;
+border-style: solid;
+border-width: 1px;
+}
+#sqr02{
+width: 100px;
+height: 100px;
+background: white;
+display: inline-block;
+border-style: solid;
+border-width: 1px;
+}
+#sqr03
+{
+width: 100px;
+height: 100px;
+background: white;
+display: inline-block;
+border-style: solid;
+border-width: 1px;
+}
+#sqr04
+{
+width: 100px;
+height: 100px;
+background: white;
+display: inline-block;
+border-style: solid;
+border-width: 1px;
+}
+#sqr05
+{
+width: 100px;
+height: 100px;
+background: white;
+display: inline-block;
+border-style: solid;
+border-width: 1px;
+}
+#sqr06
+{
+width: 100px;
+height: 100px;
+background: white;
+display: inline-block;
+border-style: solid;
+border-width: 1px;
+}
+#sqr07
+{
+width: 100px;
+height: 100px;
+background: white;
+display: inline-block;
+border-style: solid;
+border-width: 1px;
+}
+#sqr08
+{
+width: 100px;
+height: 100px;
+background: white;
+display: inline-block;
+border-style: solid;
+border-width: 1px;
+}
+#sqr09
+{
+width: 100px;
+height: 100px;
+background: white;
+display: inline-block;
+border-style: solid;
+border-width: 1px;
+}
+#sqr10
+{
+width: 100px;
+height: 100px;
+background: white;
+display: inline-block;
+border-style: solid;
+border-width: 1px;
+}
+#sqr11
+{
+width: 100px;
+height: 100px;
+background: white;
+display: inline-block;
+border-style: solid;
+border-width: 1px;
+}
+#sqr12
+{
+width: 100px;
+height: 100px;
+background: white;
+display: inline-block;
+border-style: solid;
+border-width: 1px;
+}
+#sqr13
+{
+width: 100px;
+height: 100px;
+background: white;
+display: inline-block;
+border-style: solid;
+border-width: 1px;
+}
+#sqr14
+{
+width: 100px;
+height: 100px;
+background: white;
+display: inline-block;
+border-style: solid;
+border-width: 1px;
+}
+#sqr15
+{
+width: 100px;
+height: 100px;
+background: white;
+display: inline-block;
+border-style: solid;
+border-width: 1px;
+}
+#sqr16
+{
+width: 100px;
+height: 100px;
+background: white;
+display: inline-block;
+border-style: solid;
+border-width: 1px;
+}
+ #play {
+                position: absolute;
+                left: 800px;
+                top: 10px;
+                width: 430px;
+                height: 100px;
+		font-size: 50px
+        }
+</style>
+	</head>
+    <body onload="MakeAllWhite()">
+
+<div id="sqr" class="parent">
+	<div id="sqr01" class="elem white" name="name" onclick="show(this);"></div>
+	<div id="sqr02" class="elem white" name="name" onclick="show(this);"></div>
+	<div id="sqr03" class="elem white" name="name" onclick="show(this);"></div>
+	<div id="sqr04" class="elem white" name="name" onclick="show(this);"></div>
+	<div id="sqr05" class="elem white" name="name" onclick="show(this);"></div>
+	<div id="sqr06" class="elem white" name="name" onclick="show(this);"></div>
+	<div id="sqr07" class="elem white" name="name" onclick="show(this);"></div>
+	<div id="sqr08" class="elem white" name="name" onclick="show(this);"></div>
+	<div id="sqr09" class="elem white" name="name" onclick="show(this);"></div>
+	<div id="sqr10" class="elem white" name="name" onclick="show(this);"></div>
+	<div id="sqr11" class="elem white" name="name" onclick="show(this);"></div>
+	<div id="sqr12" class="elem white" name="name" onclick="show(this);"></div>
+	<div id="sqr13" class="elem white" name="name" onclick="show(this);"></div>
+	<div id="sqr14" class="elem white" name="name" onclick="show(this);"></div>
+	<div id="sqr15" class="elem white" name="name" onclick="show(this);"></div>
+	<div id="sqr16" class="elem white" name="name" onclick="show(this);"></div>
+</div>
+<div id="play">Ваши результаты:</div>
+</br>
+<button onclick="start()" display="inline-block">Старт</button>
+
+<div id="timer" display="inline-block" size=10>00:00.00</div>
+
+<script>
+function MakeAllWhite()
+{
+	var objs = document.querySelectorAll('.elem');
+	for(let i=0;i<objs.length;i++)
+	{
+	objs[i].style.background = "white";
+	}
+}
+
+
+function start()
+{
+	(function(w)
+	{
+		w = w || window;
+		var i = w.setInterval(function(){},100000);
+		while(i>=0) { w.clearInterval(i--); }
+	})
+	(/*window*/);
+	var timer = document.getElementById("timer");
+	var time = new Date(0,0,0,0,0,0,0);
+	var m = time.getMinutes();
+	var s = time.getSeconds();
+	var ms = time.getMilliseconds();
+	function timeFlies()
+	{
+		if(ms==100)
+		{
+			s++;
+			ms=0;
+		}
+		if(s==60)
+		{
+			m++;
+			s=0;
+		}
+		ms++;
+
+	}
+	var t1 = setInterval(timeFlies, 10);
+
+	function printTime()
+	{
+		var mm = m<10?0+""+m:m;
+		var ss = s<10?0+""+s:s;
+		var mms = 0;
+
+		if(ms<10)
+		{
+			mms = 0+""+ms;
+		}
+		else
+		{
+			mms = ms;
+		}
+
+		timer.innerHTML = mm+":"+ss+"."+mms;
+	}
+	var t2 = setInterval(printTime, 10);
+	var objs = document.querySelectorAll('.elem');
+	for(let i=0;i<objs.length;i++)
+	{
+	objs[i].style.background = "white";
+	}
+	var inds = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,0];
+	var half_objs1 = [];
+	var half_objs2 = [];
+	for(let i =0; i<8; i++)
+		{
+		let k = Math.floor(Math.random()*inds.length);
+		half_objs1[i] = objs[inds[k]];
+		inds.splice(k, 1);
+		}
+	for(let i =0; i<8; i++)
+		{
+		let v = Math.floor(Math.random()*inds.length);
+		half_objs2[i] = objs[inds[v]];
+		inds.splice(v, 1);
+		}
+	var c = [];
+	function get_random_color()
+		{
+		var letters = ["0","1","2","3","4","5","6","7","8","9","A","B","C","D","E","F"];
+		var color = "";
+		for (let i = 0; i < 6; i++ )
+			{
+			color += letters[Math.round(Math.random() * 15)];
+			}
+		return color;
+		}
+	for(let i=0;c.length<9;i++)
+		{
+		var ran_col = get_random_color();
+		if(c.indexOf(ran_col)==-1)
+		{
+		c[i] = ran_col;
+		}
+		else
+		{
+		continue;
+		}
+		}
+	var objs_col = document.createElement("bgcolor");
+	for(let i =0;i<half_objs1.length;i++)
+	{
+	half_objs1[i].appendChild(objs_col);
+	}
+	for(let i =0;i<half_objs2.length;i++)
+	{
+	half_objs2[i].appendChild(objs_col);
+	}
+
+	for(let i = 0; i<half_objs1.length;i++)
+		{
+		half_objs1[i].objs_col = half_objs2[i].objs_col = "#"+c[i];
+		}
+}
+
+function show(element)
+{
+	var objs = document.querySelectorAll('.elem');
+	var arr_first = [];
+	for(let i=0;i<objs.length;i++)
+	{
+	arr_first[i] = objs[i].style.background;
+	}
+	for(let i=0; i<arr_first.length; )
+	{
+	let l = arr_first.lastIndexOf(arr_first[i]);
+	let f = arr_first.indexOf(arr_first[i]);
+	if(f!=l)
+		{
+		arr_first.splice(l, 1);
+		arr_first.splice(f, 1);
+		}
+	else
+		{
+		i++;
+		}
+	}
+	if(arr_first.indexOf("white")!=-1)
+		{
+		arr_first.splice(arr_first.indexOf("white"), 1);
+		}
+	if(arr_first.length==2)
+	{
+	}
+	else
+	{
+	element.style.background = element.objs_col;
+	}
+	var arr = [];
+	for(let i=0;i<objs.length;i++)
+	{
+	arr[i] = objs[i].style.background;
+	}
+	for(let i=0; i<arr.length;i++)
+	{
+	objs[i].className = "elem "+arr[i];
+	}
+
+	for(let i=0; i<arr.length; )
+	{
+	let l = arr.lastIndexOf(arr[i]);
+	let f = arr.indexOf(arr[i]);
+	if(f!=l)
+		{
+		arr.splice(l, 1);
+		arr.splice(f, 1);
+		}
+	else
+		{
+		i++;
+		}
+	}
+
+	for(let i=0;i<arr.length;)
+	{
+		if(arr[i]=="white")
+		{
+		arr.splice(arr.indexOf(arr[i]), 1);
+		b++;
+		}
+		else
+		{
+		i++;
+		}
+	}
+	if(arr.length===2)
+	{
+	let fir = "elem "+arr[0];
+	let sec = "elem "+arr[1];
+	var diff1 = document.getElementsByClassName(fir);
+	var diff2 = document.getElementsByClassName(sec);
+	setTimeout(check, 1000);
+	}
+function check()
+{
+diff1[0].style.background = "white";
+diff2[0].style.background = "white";
+}
+var names = document.getElementsByClassName("elem white");
+if(names.length==0)
+	{
+	alert("Поздравляем! Вы победили \n Ваше время: " + timer.innerHTML);
+	(function(w)
+	{
+		w = w || window;
+		var i = w.setInterval(function(){},100000);
+		while(i>=0) { w.clearInterval(i--); }
+	})
+	(/*window*/);
+	var tim = document.getElementById("play");
+	play.innerHTML = play.innerHTML + "</br>" + timer.innerHTML;
+	}
+
+}
+
+
+
+</script>
+<a href="http://localhost:3000/index.html"><b>Главная</b></href>
+    </body>
+
+</html>

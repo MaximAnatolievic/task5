@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+ <head>
+  <title>Main page</title>
+ </head>
+ <body>
+   <div align="center">Добро пожаловать на страницу регистрации</div>
+   <p></p>
+   <h1>Введите имя пользователя, e-mail и ваш пароль</h1>
+   <form onsubmit="return check()" action="/register.html" method="post">
+       <label>Имя</label><br>
+       <input type="text" name="userName" /><br><br>
+       <label>E-mail</label><br>
+       <input type="text" name="mail" /><br><br>
+       <label>Пароль</label><br>
+       <input type="text" name="password1" id="pasw1"/><br><br>
+       <label>Ещё раз пароль</label><br>
+       <input type="text" name="password2" id="pasw2"/><br><br>
+       <input type="submit" value="Отправить" id="button"/>
+   </form>
+   <script>
+   let pas1=document.getElementById('pasw1');
+   let pas2=document.getElementById('pasw2');
+   let button = document.getElementById('button');
+   function check(){
+     if(!pas1.value||pas1.value!=pas2.value){
+       alert('Пароли не должны быть пустыми и должны совпадать');
+       return false;
+     }
+     else{
+       return true;
+     }
+   }
+   </script>
+ </body>
+
+</html>
